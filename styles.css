@@ -4,28 +4,51 @@
 }
 
 #page-container {
+    margin: auto;
     height: auto;
-    width: 100vw;
+    max-width: 800px;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     border: 5px solid lime;
 }
 
-
-.divs {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 10px;
-    height: 50px;
-    width: 50px;
+.addButton {
+    display: block;
+    text-align: center;
+    margin: 20px;
+    height: 100px;
+    width: 100px;
     font-size: 15px;
     color: white;
     background-color: red;
     border: 5px solid black;
+}
+
+
+.divs {
+    display: block;
+    text-align: center;
+    margin: 20px;
+    height: 100px;
+    width: 100px;
+    font-size: 15px;
+    color: white;
+    background-color: red;
+    border: 5px solid black;
+}
+
+.deleteButtons {
+    margin: 10px;
+    height: 20px;
+    width: 75px;
+    font-size: 15px;
+    color: white;
+    background-color: gray;
+    border: 2px solid black;
     cursor: pointer;
 }
 
-.divs:hover {
+.deleteButtons:hover {
     transform: scale(1.2);
 }
