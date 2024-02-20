@@ -1,5 +1,5 @@
 
-import { inputDom, render, addNew, removeMember } from './functions'
+import { inputDom, render, addNew, removeMember, deleteAll } from './functions'
 
 //render the input Dom
 inputDom()
@@ -8,20 +8,16 @@ inputDom()
 render()
 
 //eventhandler for the add new member button
-document.querySelector(".addButton").addEventListener("click", function (e) {
+document.querySelector("#add-button").addEventListener("click", function (e) {
+    e.preventDefault()
     addNew()
     render()
-    console.log("You added a new member")
 })
 
-//eventhandler for the delete buttons 
-const buttons = document.querySelectorAll(".deleteButtons")
-
-buttons.forEach(function(button) {
-  button.addEventListener("click", function(e) {
-    removeMember()
-    render()
-    console.log('You deleted a member')
-  })
+//eventhandler for the delete all members button
+document.querySelector("#delete-all").addEventListener("click", function (e) {
+  e.preventDefault()
+  deleteAll()
+  render()
 })
 

@@ -26,44 +26,22 @@ const inputDom = function () {
 
     //create add new member button
     const createAddButton = document.createElement('button')
-        createAddButton.textContent = "add new member"
-        createAddButton.classList.add("addButton")
-        selectInputEl.appendChild(createAddButton)
+    createAddButton.textContent = "add new member"
+    createAddButton.classList.add("inputElButton")
+    const add = "add-button"
+    createAddButton.setAttribute('id', add)
+    createAddButton.setAttribute('type', 'button')
+    selectInputEl.appendChild(createAddButton)
 
-}
+    //create delete all members button
+    const createDeleteAllButton = document.createElement('button')
+    createDeleteAllButton.textContent = "Delete all"
+    createDeleteAllButton.classList.add("inputElButton")
+    const deleteAll = "delete-all"
+    createDeleteAllButton.setAttribute('id', deleteAll)
+    createDeleteAllButton.setAttribute('type', 'button')
+    selectInputEl.appendChild(createDeleteAllButton)
 
-//render function to be called when the array is updated or browser refreshes
-const render = function () {
-
-    const selectArrayEl = document.querySelector("#array-element")
-
-    selectArrayEl.innerHTML = ''
-    
-    //create a seperate div on the page for each object within the array
-    newMember.forEach((member) => {
-        
-        const createDivs = document.createElement('div')
-        createDivs.textContent = member.id
-        createDivs.classList.add("divs")
-        selectArrayEl.appendChild(createDivs)
-        const id = "id" + Math.random().toString(16).slice(2)
-        createDivs.setAttribute('id', id)
-        
-    })
-
-    //Create a button for each newMember div
-    const selectDivs = document.querySelectorAll(".divs")
-
-    selectDivs.forEach((selectDivs) => {
-       
-        const createButton = document.createElement('button')
-        createButton.textContent = "Delete"
-        createButton.classList.add("deleteButtons")
-        selectDivs.appendChild(createButton)
-
-    })
-
-    console.log("the page rendered")
 }
 
 //add new object of data to array
@@ -80,9 +58,10 @@ const addNew = () => {
         }
     )
    saveMember()
+
 }
 
-//remove member from the array
+//remove individual member from the array
 
 const removeMember = (id) => {
     
@@ -94,6 +73,60 @@ const removeMember = (id) => {
     saveMember()
 }
 
+//delete all members from the array 
+
+const deleteAll = () => {
+    newMember.splice(0, newMember.length)
+    saveMember()
+}
+
+
+//render function to be called when the array is updated or browser refreshes
+const render = function () {
+
+    const selectArrayEl = document.querySelector("#array-element")
+
+    selectArrayEl.innerHTML = ''
+    
+    //create a seperate div on the page for each object within the array
+    newMember.forEach((member) => {
+        
+        const createDivs = document.createElement('div')
+        createDivs.textContent = member.id
+        createDivs.classList.add("divs")
+        selectArrayEl.appendChild(createDivs)
+        let id = member.id
+        createDivs.setAttribute('id', id)
+        
+    })
+
+    // //Create a delete button for each newMember div
+    const selectDivs = document.querySelectorAll(".divs")
+
+    selectDivs.forEach((selectDivs) => {
+       
+        const createButton = document.createElement('button')
+        createButton.setAttribute('type', 'button')
+        createButton.textContent = "Delete"
+        createButton.classList.add("deleteButtons")
+        selectDivs.appendChild(createButton)
+
+        //create eventlistener for each delete button
+        const buttons = document.querySelectorAll(".deleteButtons")
+
+        buttons.forEach(function(button) {
+            button.addEventListener("click", function (e) {
+            e.preventDefault()
+            let getId = e.target.parentNode.id
+            removeMember(getId)
+            render()
+            })
+        })
+
+    })
+
+}
+
 //Create list in the console with itemised data from the Array
 const names = newMember.map((item) => item.firstName)
 console.log(names)
@@ -101,4 +134,4 @@ console.log(names)
 //Display all information from newMember array in the console
 console.log(newMember)
 
-export { inputDom, render, addNew, removeMember }
+export { inputDom, render, addNew, deleteAll }
