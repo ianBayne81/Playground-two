@@ -33,6 +33,16 @@ const inputDom = function () {
     createAddButton.setAttribute('type', 'button')
     selectInputEl.appendChild(createAddButton)
 
+    //create input field for the members first name
+    const createInputOne = document.createElement('input')
+    createInputOne.placeholder = "enter first name"
+    createInputOne.classList.add("inputElField")
+    const inputOne = "input-one"
+    createInputOne.setAttribute('id', inputOne)
+    createInputOne.setAttribute('type', 'input')
+    selectInputEl.appendChild(createInputOne)
+
+
     //create delete all members button
     const createDeleteAllButton = document.createElement('button')
     createDeleteAllButton.textContent = "Delete all"
@@ -48,7 +58,7 @@ const inputDom = function () {
 const addNew = () => {
     const id = "id" + Math.random().toString(16).slice(2)
     
-    newMember.push(
+    newMember.unshift(
         {
             id: id,
             firstName: "",
