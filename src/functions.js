@@ -20,49 +20,16 @@ const saveMember = () => {
 //expose members from module
 newMember = loadMembers()
 
-//render input elements
-const inputDom = function () {
-    const selectInputEl = document.querySelector("#input-element")
-
-    //create add new member button
-    const createAddButton = document.createElement('button')
-    createAddButton.textContent = "add new member"
-    createAddButton.classList.add("inputElButton")
-    const add = "add-button"
-    createAddButton.setAttribute('id', add)
-    createAddButton.setAttribute('type', 'button')
-    selectInputEl.appendChild(createAddButton)
-
-    //create input field for the members first name
-    const createInputOne = document.createElement('input')
-    createInputOne.placeholder = "enter first name"
-    createInputOne.classList.add("inputElField")
-    const inputOne = "input-one"
-    createInputOne.setAttribute('id', inputOne)
-    createInputOne.setAttribute('type', 'input')
-    selectInputEl.appendChild(createInputOne)
-
-
-    //create delete all members button
-    const createDeleteAllButton = document.createElement('button')
-    createDeleteAllButton.textContent = "Delete all"
-    createDeleteAllButton.classList.add("inputElButton")
-    const deleteAll = "delete-all"
-    createDeleteAllButton.setAttribute('id', deleteAll)
-    createDeleteAllButton.setAttribute('type', 'button')
-    selectInputEl.appendChild(createDeleteAllButton)
-
-}
 
 //add new object of data to array
-const addNew = () => {
+const addNew = (nameOne, nameTwo) => {
     const id = "id" + Math.random().toString(16).slice(2)
     
     newMember.unshift(
         {
             id: id,
-            firstName: "",
-            lastName: "",
+            firstName: nameOne,
+            lastName: nameTwo,
             age: 0,
             location: ""
         }
@@ -144,4 +111,4 @@ console.log(names)
 //Display all information from newMember array in the console
 console.log(newMember)
 
-export { inputDom, render, addNew, deleteAll }
+export { render, addNew, deleteAll }

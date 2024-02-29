@@ -1,29 +1,29 @@
 
-import { inputDom, render, addNew, deleteAll } from './functions'
-
-//render the input Dom
-inputDom()
+import { render, addNew, deleteAll } from './functions'
 
 //render the array
 render()
 
-//eventhandler for the add new member button
-document.querySelector("#add-button").addEventListener("click", function (e) {
+//eventhandler for add new member / submit form element
+document.querySelector("#form-element").addEventListener("submit", function (e) {
   e.preventDefault()
-  addNew()
-  render()
-})
-
-//eventhandler for the 1st input field
-document.querySelector("#input-one").addEventListener("input", function (e) {
-  e.preventDefault()
+  let nameOne = document.querySelector("#input-one").value 
+  let nameTwo = document.querySelector("#input-two").value 
   
+  if (nameOne.length > 1 && nameTwo.length > 1) {
+    addNew(nameOne, nameTwo)
+    render()
+    document.querySelector("#input-one").value = ""
+    document.querySelector("#input-two").value = ""
+  } else  {
+    alert("Enter first and last name")
+  }
 })
 
-//eventhandler for the delete all members button
-document.querySelector("#delete-all").addEventListener("click", function (e) {
-  e.preventDefault()
-  deleteAll()
-  render()
-})
+// //eventhandler for the delete all members button
+// document.querySelector("#delete-all").addEventListener("click", function (e) {
+//   e.preventDefault()
+//   deleteAll()
+//   render()
+// })
 
