@@ -22,7 +22,7 @@ newMember = loadMembers()
 
 
 //add new object of data to array
-const addNew = (nameOne, nameTwo) => {
+const addNew = (nameOne, nameTwo, age, location) => {
     const id = "id" + Math.random().toString(16).slice(2)
     
     newMember.unshift(
@@ -30,8 +30,8 @@ const addNew = (nameOne, nameTwo) => {
             id: id,
             firstName: nameOne,
             lastName: nameTwo,
-            age: 0,
-            location: ""
+            age: age,
+            location: location
         }
     )
    saveMember()

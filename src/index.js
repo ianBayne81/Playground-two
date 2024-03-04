@@ -9,15 +9,20 @@ document.querySelector("#form-element").addEventListener("submit", function (e) 
   e.preventDefault()
   let nameOne = document.querySelector("#input-one").value 
   let nameTwo = document.querySelector("#input-two").value 
-  
-  if (nameOne.length > 1 && nameTwo.length > 1) {
-    addNew(nameOne, nameTwo)
-    render()
-    document.querySelector("#input-one").value = ""
-    document.querySelector("#input-two").value = ""
+  let age = document.querySelector("#input-three").value
+  let location = document.querySelector("#input-four").value
+  let allInputs = document.querySelectorAll(".inputElField")
+
+  if (nameOne.length < 2 || nameTwo.length < 2 || age == "" || location.length < 2 ) {
+    alert("Enter all fields correctly")
+  } else if (age < 18)  {
+    alert("Minimum age is 18")
   } else  {
-    alert("Enter first and last name")
+    addNew(nameOne, nameTwo, age, location)
+    render()
   }
+  allInputs.forEach(singleInput => singleInput.value = '')
+
 })
 
 // //eventhandler for the delete all members button
