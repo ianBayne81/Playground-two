@@ -1,5 +1,5 @@
 
-import { render, addNew, deleteAll } from './functions'
+import { render, addNew } from './functions'
 
 //render the array
 render()
@@ -24,11 +24,4 @@ document.querySelector("#form-element").addEventListener("submit", function (e) 
   allInputs.forEach(singleInput => singleInput.value = '')
 
 })
-
-// //eventhandler for the delete all members button
-// document.querySelector("#delete-all").addEventListener("click", function (e) {
-//   e.preventDefault()
-//   deleteAll()
-//   render()
-// })
 

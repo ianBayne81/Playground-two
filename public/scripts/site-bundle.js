@@ -1,0 +1,2 @@
+(()=>{let e=document.querySelectorAll(".input-element");document.querySelector("#submit-button").addEventListener("submit",(function(t){t.preventDefault(),alert("Contact saved"),e.forEach((e=>e.value=""))})),document.querySelector("#delete-button").addEventListener("click",(function(t){t.preventDefault(),alert("Contact deleted"),e.forEach((e=>e.value=""))})),document.querySelector("#return-button").addEventListener("click",(function(e){e.preventDefault(),location.assign("/index.html")}))})();
+//# sourceMappingURL=site-bundle.js.map

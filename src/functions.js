@@ -48,14 +48,16 @@ const removeMember = (id) => {
         newMember.splice(memberIndex, 1)
     }
     saveMember()
+
 }
 
-//delete all members from the array 
 
-const deleteAll = () => {
-    newMember.splice(0, newMember.length)
-    saveMember()
-}
+// //delete all members from the array 
+
+// const deleteAll = () => {
+//     newMember.splice(0, newMember.length)
+//     saveMember()
+// }
 
 
 //render function to be called when the array is updated or browser refreshes
@@ -69,7 +71,7 @@ const render = function () {
     newMember.forEach((member) => {
         
         const createDivs = document.createElement('div')
-        createDivs.textContent = member.id
+        createDivs.textContent = `${member.firstName} ${member.lastName}`
         createDivs.classList.add("divs")
         selectArrayEl.appendChild(createDivs)
         let id = member.id
@@ -77,26 +79,26 @@ const render = function () {
         
     })
 
-    // //Create a delete button for each newMember div
+    // //Create a view button for each newMember div
     const selectDivs = document.querySelectorAll(".divs")
 
     selectDivs.forEach((selectDivs) => {
        
         const createButton = document.createElement('button')
         createButton.setAttribute('type', 'button')
-        createButton.textContent = "Delete"
-        createButton.classList.add("deleteButtons")
+        createButton.textContent = "View"
+        createButton.classList.add("viewButtons")
         selectDivs.appendChild(createButton)
 
-        //create eventlistener for each delete button
-        const buttons = document.querySelectorAll(".deleteButtons")
+        //create eventlistener for each view button
+        const buttons = document.querySelectorAll(".viewButtons")
 
         buttons.forEach(function(button) {
             button.addEventListener("click", function (e) {
             e.preventDefault()
-            let getId = e.target.parentNode.id
-            removeMember(getId)
-            render()
+            let getId = e.target.parentNode.id 
+            console.log(getId)
+            location.assign('/site.html')
             })
         })
 
@@ -111,4 +113,4 @@ console.log(names)
 //Display all information from newMember array in the console
 console.log(newMember)
 
-export { render, addNew, deleteAll }
+export { render, addNew }

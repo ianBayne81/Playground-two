@@ -10,32 +10,37 @@
     <meta name="keywords" content="">
     <meta http-equiv="Cache-control" content="no-store">
     <link rel="icon" type="image/x-icon" href="/images/MIJTv2.jpg">
-    <link href="styles.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <link href="index-styles.css" rel="stylesheet">
 </head>
 
 <body>
 
     <div id="page-container">
 
-        <div id="heading-element">Join the club!</div>
+        <div id="heading-element">Contact information</div>
         
         <div id="input-element">
 
             <form id="form-element">
-                <input id="input-one" class="inputElField" type="text" placeholder="enter first name">
-                <input id="input-two" class="inputElField" type="text" placeholder="enter surname">
-                <input id="input-three" class="inputElField" type="number" placeholder="enter age">
-                <input id="input-four" class="inputElField" type="text" placeholder="enter city">
-                <button id="add-button" class="inputElButton" type="submit">Add new member</button>
+                <input id="input-one" class="inputElField" type="text" placeholder="first name">
+                <input id="input-two" class="inputElField" type="text" placeholder="last name">
+                <input id="input-three" class="inputElField" type="number" placeholder="age">
+                <input id="input-four" class="inputElField" type="text" placeholder="city">
+                <button id="add-button" class="inputElButton" type="submit">Add new contact</button>
             </form>
 
         </div>
+
+        <h1 id="members-heading">Contacts</h1>
 
         <div id="array-element"></div>
         
     </div>
    
-<script src="/scripts/bundle.js"></script>
+<script src="/scripts/index-bundle.js"></script>
 
 </body>
 

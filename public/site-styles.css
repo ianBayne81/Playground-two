@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#page-container {
+    margin: auto;
+    min-height: 100vh;
+    width: 600px;
+    border: 5px solid purple;
+}
+
+#heading-element {
+    height: 150px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    font-family: "Dancing Script", cursive;
+    color: white;
+    background-color: purple;
+}
+
+#form {
+    display: block;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.input-element {
+    margin: 10px;
+    height: 50px;
+    width: 100px;
+    text-align: center;
+    font-size: 18px;
+    color: black;
+    background-color: rgb(243, 165, 243);
+    border: 5px solid darkmagenta;
+}
+
+.form-buttons {
+    height: 25px;
+    width: 125px;
+    margin: 20px;
+    color: white;
+    background-color: darkmagenta;
+    border: purple;
+    cursor: pointer;
+}
+
+.form-buttons:hover {
+    transform: scale(1.2)
+}
+
+/* These setting are for phone display only */
+@media screen and (min-width: 0px) and (max-width: 650px) {
+
+    #page-container {
+        margin: auto;
+        height: auto;
+        width: 250px;
+    }
+
+    #heading-element {
+        height: 100px;
+        font-size: 25px;
+    }
+
+    .input-element {
+        height: 50px;
+        width: 200px;
+    }
+
+    #form {
+        display: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .form-buttons {
+        margin: 10px;
+    }
+
+}

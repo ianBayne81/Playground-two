@@ -17,6 +17,7 @@
     justify-content: center;
     align-items: center;
     font-size: 50px;
+    font-family: "Dancing Script", cursive;
     color: white;
     background-color: purple;
 }
@@ -38,13 +39,13 @@
     justify-content: center;
     align-items: center;
     margin: 10px;
-    height: 100px;
+    height: 60px;
     width: 100px;
     font-size: 15px;
     color: white;
     background-color: rgb(59, 2, 59);
     border: 5px solid darkmagenta;
-    border-radius: 50px;
+    border-radius: 25px;
     cursor: pointer;
 }
 
@@ -60,10 +61,18 @@
     margin: 10px;
     height: 90px;
     width: 90px;
-    font-size: 12px;
+    font-size: 15px;
     color: black;
     background-color: rgb(243, 165, 243);
     border: 5px solid darkmagenta;
+}
+
+#members-heading {
+    font-size: 45px;
+    font-family: "Dancing Script", cursive;
+    color: purple;
+    text-align: center;
+    margin: 10px;
 }
 
 #array-element {
@@ -81,13 +90,13 @@
     margin: 20px;
     height: 100px;
     width: 100px;
-    font-size: 12px;
+    font-size: 15px;
     color: white;
     background-color: rgb(59, 2, 59);
     border: 5px solid darkmagenta;
 }
 
-.deleteButtons {
+.viewButtons {
     margin: 10px;
     height: 20px;
     width: 75px;
@@ -98,7 +107,7 @@
     cursor: pointer;
 }
 
-.deleteButtons:hover {
+.viewButtons:hover {
     transform: scale(1.2);
 }
 
@@ -108,11 +117,12 @@
     #page-container {
         margin: auto;
         height: auto;
-        width: 270px;
+        width: 250px;
     }
 
     #heading-element {
-        font-size: 25px;
+        height: 100px;
+        font-size: 30px;
     }
 
     #form-element {
@@ -123,6 +133,10 @@
     .inputElField {
         height: 50px;
         width: 200px;
+    }
+
+    #members-heading {
+        font-size: 40px;
     }
 
 }
