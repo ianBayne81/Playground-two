@@ -13,16 +13,24 @@
 #heading-element {
     height: 150px;
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 50px;
-    font-family: "Dancing Script", cursive;
+    display: block;
+    text-align: center;
     color: white;
     background-color: purple;
 }
 
-#form {
+#heading-one {
+    font-size: 50px;
+    font-family: "Dancing Script", cursive;
+}
+
+#id-heading {
+    margin-top: 15px;
+    font-family: "Inconsolata", monospace;
+    font-size: 25px;
+}
+
+#form-element {
     display: block;
     align-items: center;
     justify-content: center;
@@ -34,7 +42,7 @@
     height: 50px;
     width: 100px;
     text-align: center;
-    font-size: 18px;
+    font-size: 15px;
     color: black;
     background-color: rgb(243, 165, 243);
     border: 5px solid darkmagenta;
@@ -65,6 +73,14 @@
 
     #heading-element {
         height: 100px;
+        font-size: 25px;
+    }
+
+    #heading-one {
+        font-size: 30px;
+    }
+
+    #id-heading {
         font-size: 25px;
     }
 

@@ -17,8 +17,8 @@ const saveMember = () => {
     localStorage.setItem("newMember", JSON.stringify(newMember))
 }
 
-//expose members from module
-newMember = loadMembers()
+//function to expose array from module / used on other page
+const getMembers = () => newMember
 
 
 //add new object of data to array
@@ -38,27 +38,21 @@ const addNew = (nameOne, nameTwo, age, location) => {
 
 }
 
-//remove individual member from the array
+// //remove individual member from the array
 
-const removeMember = (id) => {
+// const removeMember = (id) => {
     
-    const memberIndex = newMember.findIndex((member) => member.id === id)
+//     const memberIndex = newMember.findIndex((member) => member.id === id)
     
-    if (memberIndex > -1) {
-        newMember.splice(memberIndex, 1)
-    }
-    saveMember()
-
-}
-
-
-// //delete all members from the array 
-
-// const deleteAll = () => {
-//     newMember.splice(0, newMember.length)
+//     if (memberIndex > -1) {
+//         newMember.splice(memberIndex, 1)
+//     }
 //     saveMember()
+
 // }
 
+//load data from local storage
+newMember = loadMembers()
 
 //render function to be called when the array is updated or browser refreshes
 const render = function () {
@@ -97,7 +91,7 @@ const render = function () {
             button.addEventListener("click", function (e) {
             e.preventDefault()
             let getId = e.target.parentNode.id 
-            console.log(getId)
+            localStorage.setItem("getId", getId)
             location.assign('/site.html')
             })
         })
@@ -106,6 +100,7 @@ const render = function () {
 
 }
 
+
 //Create list in the console with itemised data from the Array
 const names = newMember.map((item) => item.firstName)
 console.log(names)
@@ -113,4 +108,4 @@ console.log(names)
 //Display all information from newMember array in the console
 console.log(newMember)
 
-export { render, addNew }
+export { getMembers, render, addNew, saveMember }

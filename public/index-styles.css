@@ -16,10 +16,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 50px;
-    font-family: "Dancing Script", cursive;
     color: white;
     background-color: purple;
+}
+
+#heading-one {
+    font-size: 50px;
+    font-family: "Dancing Script", cursive;
 }
 
 #input-element {
@@ -122,6 +125,9 @@
 
     #heading-element {
         height: 100px;
+    }
+
+    #heading-one {
         font-size: 30px;
     }
 

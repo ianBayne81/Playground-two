@@ -13,6 +13,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
     <link href="site-styles.css" rel="stylesheet">
 </head>
 
@@ -20,14 +23,15 @@
 
     <div id="page-container">
 
-        <div id="heading-element">Personal information</div>
+        <div id="heading-element">
+            <div id="heading-one">Personal information</div>
+        </div>
 
-        <form id="form">
-
-            <input class="input-element" type="text">
-            <input class="input-element" type="text">
-            <input class="input-element" type="number">
-            <input class="input-element" type="text">
+        <form id="form-element">
+            <input id="first-name" class="input-element" type="text">
+            <input id="last-name" class="input-element" type="text">
+            <input id="age" class="input-element" type="number">
+            <input id="location" class="input-element" type="text">
             <br>
             <button id="submit-button" class="form-buttons" type="submit">Save</button>
             <button id="delete-button" class="form-buttons" type="button">Delete</button>
