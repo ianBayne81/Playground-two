@@ -4,9 +4,11 @@
 }
 
 #page-container {
+    display: block;
     margin: auto;
+    text-align: center;
     min-height: 100vh;
-    width: 600px;
+    width: 650px;
     border: 5px solid purple;
 }
 
@@ -31,16 +33,15 @@
 }
 
 #form-element {
-    display: block;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    display: inline-block;
+    text-align: center; 
+    width: 100%;
 }
 
 .input-element {
     margin: 10px;
     height: 50px;
-    width: 100px;
+    width: 120px;
     text-align: center;
     font-size: 15px;
     color: black;
@@ -54,7 +55,7 @@
     margin: 20px;
     color: white;
     background-color: darkmagenta;
-    border: purple;
+    border: 5px solid darkmagenta;
     cursor: pointer;
 }
 
@@ -63,12 +64,13 @@
 }
 
 /* These setting are for phone display only */
-@media screen and (min-width: 0px) and (max-width: 650px) {
+@media screen and (min-width: 0px) and (max-width: 700px) {
 
     #page-container {
         margin: auto;
         height: auto;
-        width: 250px;
+        min-height: 100vh;
+        width: 100vw;
     }
 
     #heading-element {
@@ -89,15 +91,14 @@
         width: 200px;
     }
 
-    #form {
-        display: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
+    #form-element {
+        width: 350px;
     }
 
     .form-buttons {
         margin: 10px;
+        width: 200px;
+        height: 30px;
     }
 
 }
