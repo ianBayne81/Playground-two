@@ -33,7 +33,7 @@ const renderEditPage = (memberId) => {
 //render edit page data
 renderEditPage(memberId)
 
-//edit member details 
+//edit, save and delete member details 
 const updateMember = (id, updates) => {
   let member = newMember.find((member) => member.id === id)
 
@@ -41,31 +41,21 @@ const updateMember = (id, updates) => {
     return
   }
 
-  if (typeof updates.firstName === 'string' && updates.firstName.length > 2) {
+  if (updates.firstName.length < 2 || updates.lastName.length < 2 || updates.age == "" || updates.location.length < 2) {
+      alert("Min character length is 2")
+  } else if (updates.age < 18) {
+      alert("Minimum age is 18")
+  } else {
       member.firstName = updates.firstName
-      
-  } 
-
-  if (typeof updates.lastName === 'string' && updates.lastName.length > 1) {
       member.lastName = updates.lastName
-      
-  } 
-
-  if (typeof updates.age === 'string' && updates.age >= 18) {
       member.age = updates.age
-      
-  } 
-
-  if (typeof updates.location === 'string' && updates.location.length > 2) {
       member.location = updates.location
-      
-  } 
-  saveMember()
+      saveMember()
+      alert("Contact saved")
+  }
 
 }
   
-
-
 //remove individual member from the array
 
 const removeMember = (id) => {
@@ -90,9 +80,8 @@ document.querySelector("#form-element").addEventListener('submit', function (e) 
       lastName: surnameElement.value,
       age: ageElement.value,
       location: locationElement.value
-  })
+    })
     
-    alert("Contact saved")
   })
 
 // eventlistener to remove contact button

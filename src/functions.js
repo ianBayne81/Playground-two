@@ -17,7 +17,7 @@ const saveMember = () => {
     localStorage.setItem("newMember", JSON.stringify(newMember))
 }
 
-//function to expose array from module / used on other page
+//function to expose array from module / used on site page
 const getMembers = () => newMember
 
 
@@ -38,34 +38,37 @@ const addNew = (nameOne, nameTwo, age, location) => {
 
 }
 
-// //remove individual member from the array
-
-// const removeMember = (id) => {
-    
-//     const memberIndex = newMember.findIndex((member) => member.id === id)
-    
-//     if (memberIndex > -1) {
-//         newMember.splice(memberIndex, 1)
-//     }
-//     saveMember()
-
-// }
-
 //load data from local storage
 newMember = loadMembers()
 
 //render function to be called when the array is updated or browser refreshes
 const render = function () {
 
-    const selectArrayEl = document.querySelector("#array-element")
+    ///Sort the array alphabetically by last name and then first name
+    newMember.sort(function (a, b,) {
+        if (a.lastName+a.firstName > b.lastName+b.firstName) {
+            return 1
+        }
 
+        if (a.lastName+a.firstName < b.lastName+b.firstName) {
+            return -1
+        }
+
+        if (a.lastName+a.firstName === b.lastName+b.firstName) {
+            return 0
+        }
+        
+    })
+    
+    //clear array element so the new data can be displayed
+    const selectArrayEl = document.querySelector("#array-element")
     selectArrayEl.innerHTML = ''
     
-    //create a seperate div on the page for each object within the array
+    //create a seperate div on the page for each member within the array
     newMember.forEach((member) => {
         
         const createDivs = document.createElement('div')
-        createDivs.textContent = `${member.firstName} ${member.lastName}`
+        createDivs.textContent = `${member.lastName} ${member.firstName}`
         createDivs.classList.add("divs")
         selectArrayEl.appendChild(createDivs)
         let id = member.id
