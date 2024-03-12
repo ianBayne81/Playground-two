@@ -38,10 +38,10 @@
     width: 100%;
 }
 
-.input-element {
+.inputElField {
     margin: 10px;
-    height: 50px;
-    width: 120px;
+    height: 40px;
+    width: 250px;
     text-align: center;
     font-size: 15px;
     color: black;
@@ -86,17 +86,16 @@
         font-size: 25px;
     }
 
-    .input-element {
-        height: 50px;
-        width: 200px;
-    }
-
     #form-element {
         width: 350px;
     }
 
+    .inputElField {
+        margin: 7px;
+    }
+
     .form-buttons {
-        margin: 10px;
+        margin: 7px;
         width: 200px;
         height: 30px;
     }

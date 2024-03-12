@@ -12,7 +12,7 @@
 }
 
 #heading-element {
-    height: 150px;
+    height: 100px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -63,8 +63,8 @@
     align-items: center;
     text-align: center;
     margin: 10px;
-    height: 90px;
-    width: 90px;
+    height: 40px;
+    width: 250px;
     font-size: 15px;
     color: black;
     background-color: rgb(243, 165, 243);
@@ -123,7 +123,7 @@
     }
 
     #heading-element {
-        height: 100px;
+        height: 80px;
     }
 
     #heading-one {
@@ -135,8 +135,7 @@
     }
 
     .inputElField {
-        height: 50px;
-        width: 200px;
+        margin: 7px;
     }
 
     .divs {

@@ -22,18 +22,18 @@ const getMembers = () => newMember
 
 
 //add new object of data to array
-const addNew = (nameOne, nameTwo, age, location) => {
+const addNew = (nameOne, nameTwo, mobileNumber, email, dob, address) => {
     const id = "id" + Math.random().toString(16).slice(2)
     
-    newMember.unshift(
-        {
+    newMember.unshift({
             id: id,
             firstName: nameOne,
             lastName: nameTwo,
-            age: age,
-            location: location
-        }
-    )
+            mobileNumber: mobileNumber,
+            email: email,
+            dob: dob,
+            address: address
+    })
    saveMember()
 
 }
@@ -43,6 +43,10 @@ newMember = loadMembers()
 
 //render function to be called when the array is updated or browser refreshes
 const render = function () {
+
+    //clear array element so the new data can be displayed
+    const selectArrayEl = document.querySelector("#array-element")
+    selectArrayEl.innerHTML = ''
 
     ///Sort the array alphabetically by last name and then first name
     newMember.sort(function (a, b,) {
@@ -60,15 +64,11 @@ const render = function () {
         
     })
     
-    //clear array element so the new data can be displayed
-    const selectArrayEl = document.querySelector("#array-element")
-    selectArrayEl.innerHTML = ''
-    
     //create a seperate div on the page for each member within the array
     newMember.forEach((member) => {
         
         const createDivs = document.createElement('div')
-        createDivs.textContent = `${member.lastName} ${member.firstName}`
+        createDivs.textContent = `${member.firstName} ${member.lastName}`
         createDivs.classList.add("divs")
         selectArrayEl.appendChild(createDivs)
         let id = member.id

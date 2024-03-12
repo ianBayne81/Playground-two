@@ -5,10 +5,14 @@ const newMember = getMembers()
 
 //variables used in site
 const memberId = localStorage.getItem("getId")
-const nameElement = document.querySelector("#first-name")
-const surnameElement = document.querySelector("#last-name")
-const ageElement = document.querySelector("#age")
-const locationElement = document.querySelector("#location")
+const nameOneEl = document.querySelector("#input-one")
+const nameTwoEl = document.querySelector("#input-two")
+const mobileNumberEl = document.querySelector("#input-three")
+const emailEl = document.querySelector("#input-four")
+const dobEl = document.querySelector("#input-five")
+const addressEl = document.querySelector("#input-six")
+
+
 
 //render site page data function
 const renderEditPage = (memberId) => {
@@ -23,10 +27,12 @@ const renderEditPage = (memberId) => {
   idElement.appendChild(createPara)
   
   //Place member details in the input fields
-  nameElement.value = member.firstName
-  surnameElement.value = member.lastName
-  ageElement.value = member.age
-  locationElement.value = member.location
+  nameOneEl.value = member.firstName
+  nameTwoEl.value = member.lastName
+  mobileNumberEl.value = member.mobileNumber
+  emailEl.value = member.email
+  dobEl.value = member.dob
+  addressEl.value = member.address
   
 }
 
@@ -41,15 +47,15 @@ const updateMember = (id, updates) => {
     return
   }
 
-  if (updates.firstName.length < 2 || updates.lastName.length < 2 || updates.age == "" || updates.location.length < 2) {
-      alert("Min character length is 2")
-  } else if (updates.age < 18) {
-      alert("Minimum age is 18")
-  } else {
+  if (updates.firstName.length < 2 || updates.lastName.length < 2 || updates.mobileNumber.length < 10) {
+      alert("At lease enter first name, last name and mobile number")
+  }  else {
       member.firstName = updates.firstName
       member.lastName = updates.lastName
-      member.age = updates.age
-      member.location = updates.location
+      member.mobileNumber = updates.mobileNumber
+      member.email = updates.email
+      member.dob = updates.dob
+      member.address = updates.address
       saveMember()
       alert("Contact saved")
   }
@@ -76,10 +82,12 @@ let allInputs = document.querySelectorAll(".input-element")
 document.querySelector("#form-element").addEventListener('submit', function (e) {
     e.preventDefault()
     updateMember(memberId, {
-      firstName: nameElement.value,
-      lastName: surnameElement.value,
-      age: ageElement.value,
-      location: locationElement.value
+      firstName: nameOneEl.value,
+      lastName: nameTwoEl.value,
+      mobileNumber: mobileNumberEl.value,
+      email: emailEl.value,
+      dob: dobEl.value,
+      address: addressEl.value
     })
     
   })
