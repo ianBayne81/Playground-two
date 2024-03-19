@@ -5,34 +5,37 @@ const newMember = getMembers()
 
 //variables used in site
 const memberId = localStorage.getItem("getId")
-const nameOneEl = document.querySelector("#input-one")
-const nameTwoEl = document.querySelector("#input-two")
-const mobileNumberEl = document.querySelector("#input-three")
-const emailEl = document.querySelector("#input-four")
-const dobEl = document.querySelector("#input-five")
-const addressEl = document.querySelector("#input-six")
 
-
+let nameOne = document.querySelector("#input-one")
+let nameTwo = document.querySelector("#input-two")
+let day = document.querySelector("#input-three")
+let month = document.querySelector("#input-four")
+let year = document.querySelector("#input-five")
+let mobileNumber = document.querySelector("#input-six")
+let email = document.querySelector("#input-seven")
+let address = document.querySelector("#input-eight")
 
 //render site page data function
 const renderEditPage = (memberId) => {
 
   const member = newMember.find((member) => member.id === memberId)
 
-  //create paragraph for the id and place in the heading element
-  const idElement = document.querySelector("#heading-element")
+  //create paragraph for age and place in the heading element
+  const ageElement = document.querySelector("#heading-two")
   const createPara = document.createElement("p")
-  createPara.setAttribute("id", "id-heading")
-  createPara.textContent = member.id
-  idElement.appendChild(createPara)
+  createPara.textContent = member.memberAge
+  ageElement.appendChild(createPara)
+  
   
   //Place member details in the input fields
-  nameOneEl.value = member.firstName
-  nameTwoEl.value = member.lastName
-  mobileNumberEl.value = member.mobileNumber
-  emailEl.value = member.email
-  dobEl.value = member.dob
-  addressEl.value = member.address
+  nameOne.value = member.firstName
+  nameTwo.value = member.lastName
+  day.value = member.day
+  month.value = member.month
+  year.value = member.year
+  mobileNumber.value = member.mobileNumber
+  email.value = member.email
+  address.value = member.address
   
 }
 
@@ -47,15 +50,19 @@ const updateMember = (id, updates) => {
     return
   }
 
-  if (updates.firstName.length < 2 || updates.lastName.length < 2 || updates.mobileNumber.length < 10) {
-      alert("At lease enter first name, last name and mobile number")
+  if (updates.firstName.length < 2 || updates.lastName.length < 2 || updates.day =="" || updates.month =="" || updates.year.length < 4) {
+      alert("Enter first name, last name and dob correctly")
   }  else {
       member.firstName = updates.firstName
       member.lastName = updates.lastName
+      member.day = updates.day
+      member.month = updates.month
+      member.year = updates.year
       member.mobileNumber = updates.mobileNumber
       member.email = updates.email
-      member.dob = updates.dob
       member.address = updates.address
+      member.dob = `${member.year}-${member.month}-${member.day}`,
+      member.memberAge = `${member.firstName} is ${Math.floor((new Date() - new Date(member.dob).getTime()) / 3.15576e+10)} years old`,
       saveMember()
       alert("Contact saved")
   }
@@ -81,14 +88,19 @@ let allInputs = document.querySelectorAll(".input-element")
 // eventlistener for the form to save and submit details
 document.querySelector("#form-element").addEventListener('submit', function (e) {
     e.preventDefault()
+    document.querySelector("#heading-two").innerHTML = ""
     updateMember(memberId, {
-      firstName: nameOneEl.value,
-      lastName: nameTwoEl.value,
-      mobileNumber: mobileNumberEl.value,
-      email: emailEl.value,
-      dob: dobEl.value,
-      address: addressEl.value
+      firstName: nameOne.value,
+      lastName: nameTwo.value,
+      day: day.value,
+      month: month.value,
+      year: year.value,
+      mobileNumber: mobileNumber.value,
+      email: email.value,
+      address: address.value,
     })
+
+    renderEditPage(memberId)
     
   })
 
@@ -97,7 +109,7 @@ document.querySelector("#delete-button").addEventListener('click', function (e) 
   e.preventDefault()
   removeMember(memberId)
   alert("Contact deleted")
-  document.querySelector("#id-heading").innerHTML = ""
+  document.querySelector("#heading-two").innerHTML = ""
   allInputs.forEach(singleInput => singleInput.value = '')
   location.assign('/index.html')
 })

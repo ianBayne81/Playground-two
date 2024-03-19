@@ -22,17 +22,21 @@ const getMembers = () => newMember
 
 
 //add new object of data to array
-const addNew = (nameOne, nameTwo, mobileNumber, email, dob, address) => {
+const addNew = (nameOne, nameTwo, day, month, year, mobileNumber, email, address, dob) => {
     const id = "id" + Math.random().toString(16).slice(2)
     
     newMember.unshift({
             id: id,
             firstName: nameOne,
             lastName: nameTwo,
+            day: day,
+            month: month,
+            year: year,
             mobileNumber: mobileNumber,
             email: email,
-            dob: dob,
-            address: address
+            address: address,
+            dob: dob = `${year}-${month}-${day}`,
+            memberAge: `${nameOne} is ${Math.floor((new Date() - new Date(dob).getTime()) / 3.15576e+10)} years old`,
     })
    saveMember()
 
