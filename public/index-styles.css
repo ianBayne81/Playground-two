@@ -8,7 +8,8 @@
     text-align: center;
     min-height: 100vh;
     width: 500px;
-    border: 5px solid purple;
+    border: 5px solid blue;
+    background: black;
 }
 
 #heading-element {
@@ -18,7 +19,6 @@
     justify-content: center;
     align-items: center;
     color: white;
-    background-color: purple;
 }
 
 #heading-one {
@@ -26,10 +26,16 @@
     font-family: "Dancing Script", cursive;
 }
 
+#element-wrap {
+    width: 100%;
+    background-image: url("./images/starsbg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 #input-element {
     min-height: 150px;
     width: 100%;
-    margin-top: 5px;
 }
 
 #form-element {
@@ -45,10 +51,11 @@
     margin: 10px;
     height: 60px;
     width: 150px;
-    font-size: 15px;
+    font-size: 17px;
+    font-weight: 400;
     color: white;
-    background-color: rgb(59, 2, 59);
-    border: 5px solid darkmagenta;
+    background-color: rgb(124, 124, 247);
+    border: 5px solid white;
     border-radius: 25px;
     cursor: pointer;
 }
@@ -66,9 +73,10 @@
     height: 40px;
     width: 300px;
     font-size: 17px;
-    color: black;
-    background-color: rgb(243, 165, 243);
-    border: 5px solid darkmagenta;
+    color: white; 
+    background-color: rgb(124, 124, 247);
+    border: 5px solid white;
+    border-radius: 25px; 
 }
 
 .inputElField::placeholder {
@@ -78,6 +86,7 @@
 
 label {
     font-size: 25px;
+    color: white;
     font-family: "Dancing Script", cursive;
 }
 
@@ -89,8 +98,9 @@ label {
     width: 75px;
     font-size: 17px;
     color: black;
-    background-color: rgb(243, 165, 243);
-    border: 5px solid darkmagenta;
+    background-color: rgb(124, 124, 247);
+    border: 5px solid white;
+    border-radius: 25px;
 }
 
 .dobElField::placeholder {
@@ -101,28 +111,29 @@ label {
 #members-heading {
     font-size: 45px;
     font-family: "Dancing Script", cursive;
-    color: purple;
+    color: white;
     text-align: center;
     margin: 10px;
 }
 
 #array-element {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: block;
     min-height: 150px;
     width: 100%;
     margin-top: 5px;
 }
 
 .divs {
-    margin: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
     height: 75px;
     width: 150px;
     font-size: 15px;
     color: white;
-    background-color: rgb(59, 2, 59);
-    border: 5px solid darkmagenta;
+    background: linear-gradient(black, rgb(124, 124, 247));
+    border: 5px solid white;
 }
 
 .viewButtons {
@@ -131,8 +142,8 @@ label {
     width: 75px;
     font-size: 15px;
     color: white;
-    background-color: gray;
-    border: 2px solid darkmagenta;
+    background-color: black;
+    border: 2px solid white;
     cursor: pointer;
 }
 

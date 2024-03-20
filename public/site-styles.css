@@ -9,30 +9,27 @@
     text-align: center;
     min-height: 100vh;
     width: 500px;
-    border: 5px solid purple;
+    border: 5px solid blue;
+    background-image: url("./images/starsbg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #heading-element {
-    height: 150px;
+    height: 100px;
     width: 100%;
-    display: column;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: white;
-    background-color: purple;
-}
-
-#heading-one {
-    margin-top: 0px;
-    margin-bottom: 10px;
-    font-family: "Dancing Script", cursive;
-    font-size: 50px;
+    
 }
 
 #heading-two {
     margin-top: 0px;
     margin-bottom: 10px;
     font-family: "Dancing Script", cursive;
-    font-size: 30px;
+    font-size: 40px;
 }
 
 #form-element {
@@ -48,8 +45,9 @@
     text-align: center;
     font-size: 15px;
     color: black;
-    background-color: rgb(243, 165, 243);
-    border: 5px solid darkmagenta;
+    background-color: rgb(124, 124, 247);
+    border: 5px solid white;
+    border-radius: 25px;
 }
 
 .inputElField::placeholder {
@@ -59,6 +57,8 @@
 
 label {
     font-size: 25px;
+    color: white;
+    font-weight: 400;
     font-family: "Dancing Script", cursive;
 }
 
@@ -70,8 +70,9 @@ label {
     width: 75px;
     font-size: 17px;
     color: black;
-    background-color: rgb(243, 165, 243);
-    border: 5px solid darkmagenta;
+    background-color: rgb(124, 124, 247);
+    border: 5px solid white;
+    border-radius: 25px;
 }
 
 .dobElField::placeholder {
@@ -84,8 +85,11 @@ label {
     width: 300px;
     margin: 10px;
     color: white;
-    background-color: darkmagenta;
-    border: 5px solid darkmagenta;
+    font-size: 17px;
+    font-weight: 400;
+    background-color: rgb(124, 124, 247);
+    border: 5px solid white;
+    border-radius: 25px;
     cursor: pointer;
 }
 
@@ -104,7 +108,7 @@ label {
     }
 
     #heading-element {
-        height: 100px;
+        height: 60px;
         font-size: 25px;
     }
 
